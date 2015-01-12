@@ -1,0 +1,5 @@
+FROM centos:centos6
+RUN  yum -y install wget ;yum -y install java;yum -y install tar; wget http://www.interior-dsgn.com/apache/tomcat/tomcat-8/v8.0.15/bin/apache-tomcat-8.0.15.tar.gz ; tar -zxvf apache-tomcat-8.0.15.tar.gz;./apache-tomcat-8.0.15/bin/startup.sh;
+
+EXPOSE 8080
+CMD ["/apache-tomcat-8.0.15/bin/catalina.sh","run"]
